@@ -10,7 +10,15 @@ module.exports = {
         // Paths
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
-        proxyTable: {},
+        proxyTable: {
+            "/devapi": {
+                target: "http://www.web-jshtml.cn/productapi",
+                changeOrigin: true,
+                pathRewrite: {
+                    "^/devapi": ""
+                }
+            }
+        },
 
         // Various Dev Server settings
         host: 'localhost', // can be overwritten by process.env.HOST
